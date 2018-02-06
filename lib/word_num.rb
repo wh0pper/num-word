@@ -8,6 +8,8 @@ class Word_num
 
     num_lib = { 0=> "", 1 => "one", 2 => "two", 3 => "three", 4 => "four", 5 => "five", 6 => "six", 7 => "seven", 8 => "eight", 9 => "nine", 10 => "ten", 11 => "eleven", 12 => "twelve", 13 => "thirteen", 14 => "fourteen", 15 => "fifteen", 16 => "sixteen", 17 => "seventeen", 18 => "eighteen", 19 => "nineteen", 20 => "twenty", 30 => "thirty", 40 => "forty", 50=> "fifty", 60=> "sixty", 70=> "seventy", 80=> "eighty", 90=> "ninety" }
 
+
+
     if @num < 20
       return num_lib.fetch(@num)
     end
@@ -38,7 +40,7 @@ class Word_num
       billions = @num/1000000000
       return (Word_num.new(billions).convert + " billion ") + (Word_num.new(@num%1000000000).convert)
     end
-
+    return "not a valid number"
   end
 end
 
@@ -46,3 +48,5 @@ puts 'give me a number'
 name = gets.chomp
 num = Word_num.new(name.to_i)
 puts num.convert()
+
+#program built by the BACKEND BOYS
