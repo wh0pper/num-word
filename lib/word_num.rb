@@ -22,7 +22,6 @@ class Word_num
 
     if @num < 1000
       hundreds_place = (@num/100)
-      # tens = (Word_num.new(@num%100).convert)
       return (num_lib.fetch(hundreds_place) + " hundred ") + (Word_num.new(@num%100).convert)
     end
 
